@@ -55,8 +55,9 @@ html {
 
 /* ----- GLOBAL BUTTON DESIGN ----- */
 .btn {
+    font-size: 10px;
     font-weight: 500;
-    padding: 12px 20px;
+    padding: 10px 10px;
     background: #efefef;
     border: none;
     border-radius: 10px;
@@ -65,7 +66,8 @@ html {
 }
 
 .btn>i {
-    margin-left: 10px;
+    font-size: 12px;
+    margin-left: 5px;
 }
 
 .btn:hover {
@@ -75,7 +77,7 @@ html {
 
 /* ----- GLOBAL ICONS DESIGN ----- */
 i {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 /* ------- BASE -------- */
@@ -104,6 +106,7 @@ nav {
 
 .nav-logo {
     position: relative;
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,21 +114,13 @@ nav {
 }
 
 .nav-name {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 600;
     color: var(--text-color-third);
 }
 
-.nav-logo span {
-    position: absolute;
-    top: -15px;
-    right: -20px;
-    font-size: 4em;
-    color: var(--text-color-second);
-}
-
 .nav-logo img {
-    height: 35px;
+    height: 25px;
     width: auto;
     object-fit: contain;
     
@@ -134,6 +129,18 @@ nav {
 .nav-menu,
 .nav_menu_list {
     display: flex;
+    
+}
+
+.nav-menu {
+    width: 70%;
+    justify-content: flex-end;
+}
+
+.nav_menu_list {
+    width: 400px;
+    padding: 0;
+    margin-left: 150px;
 }
 
 .nav-menu .nav_list {
@@ -144,9 +151,16 @@ nav {
 .nav-link {
     text-decoration: none;
     color: var(--text-color-second);
+    font-size: 15px;
     font-weight: 500;
-    padding-inline: 15px;
-    margin-inline: 20px;
+    margin-inline: 12px;
+    position: relative;
+    transition: 0.3;
+}
+
+.nav-button {
+    width: 200px;
+    padding-inline: 20px;
 }
 
 .nav-menu-btn {
@@ -158,18 +172,18 @@ nav {
     cursor: pointer;
 }
 
+
 .active-link {
-    position: relative;
     color: var(--first-color);
-    transition: .3;
 }
 
-.active-link::after {
+.nav-link.active-link::after {
     content: '';
     position: absolute;
+    top: 100%;
     left: 50%;
-    bottom: -15px;
-    transform: translate(-50%, -50%);
+    margin-top: 10px;
+    transform: translateX(-50%);
     width: 5px;
     height: 5px;
     background: var(--first-color);
@@ -729,6 +743,34 @@ footer {
 /* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
 
 @media only screen and (max-width: 540px) {
+    body {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    nav {
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        background: var(--body-color);
+        padding-inline: 9vw;
+        transition: .3s;
+        z-index: 100;
+    }
+
+    .nav-logo {
+        position: relative;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        border: 2px solid red;
+    }
+
     .nav-logo span {
         position: absolute;
         top: -15px;
@@ -747,6 +789,10 @@ footer {
         font-size: 40px;
     }
 
+    .scroll-icon-box {
+        display: none;
+    }
+
     .project-box {
         width: 100%;
     }
@@ -759,6 +805,7 @@ footer {
         width: 100%;
     }
 }
+
 
 /* ----- COMPLETED PROJECTS ----- */
 h2 {
