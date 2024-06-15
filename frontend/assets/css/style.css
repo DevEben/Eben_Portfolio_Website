@@ -768,7 +768,6 @@ footer {
         justify-content: center;
         align-items: center;
         gap: 15px;
-        border: 2px solid red;
     }
 
     .nav-logo span {
